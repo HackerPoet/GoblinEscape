@@ -1,7 +1,7 @@
 # GoblinEscape
 Simple python game to avoid a goblin.
 To see what this code is about, check out this video:
-[Inset Link]
+https://youtu.be/V0V3LMK40iI
 
 ## Basic Installation
 For newbies to python
