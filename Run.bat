@@ -1,0 +1,2 @@
+python GoblinEscape.py
+pause
