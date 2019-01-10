@@ -26,8 +26,8 @@ def clear():
 	radius_mult = bspeed / gspeeds[gspeed_ix]
 
 	window.fill((0,80,0))
-	pygame.draw.circle(window, (0,0,128), (width/2, height/2), int(radius*1.00), 0)
-	pygame.draw.circle(window, (200,200,200), (width/2, height/2), int(radius*radius_mult), 1)
+	pygame.draw.circle(window, (0,0,128), (int(width/2), int(height/2)), int(radius*1.00), 0)
+	pygame.draw.circle(window, (200,200,200), (int(width/2), int(height/2)), int(radius*radius_mult), 1)
 
 def redraw(draw_text=False,win=False):
 	clear()
