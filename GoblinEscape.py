@@ -19,6 +19,7 @@ def restart():
 	boatx = 0.1
 	boaty = 0.0
 	clicking = False
+	actual_level = 1
 
 pygame.init()
 window = pygame.display.set_mode((width, height))
