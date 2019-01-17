@@ -14,7 +14,7 @@ clicking = False
 actual_level = 1
 
 def restart():
-	global goblin, boatx, boaty, clicking
+	global goblin, boatx, boaty, clicking, actual_level
 	goblin = 0.0
 	boatx = 0.1
 	boaty = 0.0
