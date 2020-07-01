@@ -60,13 +60,13 @@ def updateGoblin():
 	gspeed = gspeeds[gspeed_ix]
 	newang = math.atan2(boaty, boatx)
 	diff = newang - goblin
-	if diff < math.pi: diff += math.pi*2.0
+	if diff < -math.pi: diff += math.pi*2.0
 	if diff > math.pi: diff -= math.pi*2.0
 	if abs(diff)*radius <= gspeed * speed_mult:
 		goblin = newang
 	else:
 		goblin += gspeed * speed_mult / radius if diff > 0.0 else -gspeed * speed_mult / radius
-	if goblin < math.pi: goblin += math.pi*2.0
+	if goblin < -math.pi: goblin += math.pi*2.0
 	if goblin > math.pi: goblin -= math.pi*2.0 
 
 def moveBoat(x,y):
@@ -85,7 +85,7 @@ def detectWin():
 	global gspeed_ix
 	if boatx*boatx + boaty*boaty > radius*radius:
 		diff = math.atan2(boaty, boatx) - goblin
-		if diff < math.pi: diff += math.pi*2.0
+		if diff < -math.pi: diff += math.pi*2.0
 		if diff > math.pi: diff -= math.pi*2.0
 		while True:
 			is_win = abs(diff) > 0.000001
