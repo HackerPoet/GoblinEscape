@@ -11,6 +11,7 @@ gspeeds = [3.5, 4.0, 4.2, 4.4, 4.6]
 gspeed_ix = 0
 speed_mult = 3.0
 clicking = False
+clicked_yet = False
 
 def restart():
 	global goblin, boatx, boaty, clicking
@@ -44,6 +45,14 @@ def redraw(draw_text=False,win=False):
 		textpos = text.get_rect()
 		textpos.centerx = window.get_rect().centerx
 		textpos.centery = height/2
+		window.blit(text, textpos)
+	
+	if not clicked_yet:
+		font = pygame.font.Font(None, 60)
+		text = font.render("Click & Drag", 1, (255, 255, 255))
+		textpos = text.get_rect()
+		textpos.centerx = window.get_rect().centerx
+		textpos.centery = 50
 		window.blit(text, textpos)
 
 	font = pygame.font.Font(None, 48)
@@ -113,6 +122,7 @@ while True:
 	if clicking:
 		x,y = pygame.mouse.get_pos()
 		moveBoat(x - width/2, y - height/2)
+		clicked_yet = True
 	updateGoblin()
 	detectWin()
 	redraw()
